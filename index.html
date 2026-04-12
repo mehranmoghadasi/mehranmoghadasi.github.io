@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mehran Moghadasi — WordPress Developer & Digital Marketing Manager</title>
+  <meta name="description" content="Mehran Moghadasi — WordPress Developer and Digital Marketing Manager based in Edmonton, Alberta. 13+ years experience, 30+ client websites, Google Ads, SEO, Instagram, Telegram.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a3a5c;
+      --teal: #0d6e6e;
+      --amber: #e8751a;
+      --light: #f7f9fc;
+      --text: #2c2c2c;
+      --muted: #666;
+      --border: #dde3eb;
+      --white: #fff;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    a { color: var(--teal); text-decoration: none; }
+    a:hover { color: var(--amber); }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, var(--navy) 0%, #0d2d50 100%);
+      color: #fff;
+      padding: 60px 24px 50px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      background: var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.4rem; font-weight: 800; color: #fff;
+      margin: 0 auto 20px;
+      border: 3px solid rgba(255,255,255,0.3);
+    }
+
+    header h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    header .title {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 18px;
+    }
+
+    header .location {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 28px;
+    }
+
+    .header-links {
+      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 20px;
+      border-radius: 5px;
+      font-size: 0.9rem; font-weight: 700;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.85; }
+
+    .btn-white  { background: #fff; color: var(--navy); }
+    .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); }
+    .btn-amber  { background: var(--amber); color: #fff; }
+
+    /* ── Stats bar ── */
+    .stats-bar {
+      background: var(--amber);
+      display: flex; justify-content: center; gap: 0; flex-wrap: wrap;
+    }
+
+    .stat {
+      padding: 18px 32px;
+      text-align: center;
+      color: #fff;
+      border-right: 1px solid rgba(255,255,255,0.25);
+    }
+    .stat:last-child { border-right: none; }
+
+    .stat-num {
+      display: block;
+      font-size: 1.6rem; font-weight: 800; line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.78rem; opacity: 0.9; margin-top: 2px;
+    }
+
+    /* ── Main layout ── */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+    section { padding: 50px 0; }
+    section + section { border-top: 1px solid var(--border); }
+
+    h2 {
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 24px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid var(--teal);
+      display: inline-block;
+    }
+
+    /* ── About ── */
+    .about-text { font-size: 1.05rem; color: var(--text); max-width: 720px; }
+    .about-text p { margin-bottom: 14px; }
+
+    /* ── Skills grid ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .skill-card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+
+    .skill-card h3 {
+      font-size: 0.85rem;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+
+    .skill-card ul { list-style: none; }
+    .skill-card li {
+      font-size: 0.9rem;
+      color: var(--text);
+      padding: 2px 0;
+    }
+    .skill-card li::before { content: "• "; color: var(--amber); }
+
+    /* ── Projects ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex; flex-direction: column;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+
+    .project-icon {
+      font-size: 1.6rem; margin-bottom: 10px;
+    }
+
+    .project-card h3 {
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .project-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      flex: 1;
+      margin-bottom: 14px;
+    }
+
+    .project-tag {
+      display: inline-block;
+      background: #e8f4f4;
+      color: var(--teal);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 3px;
+      margin-right: 4px;
+      margin-bottom: 4px;
+    }
+
+    .project-link {
+      display: inline-flex; align-items: center; gap: 4px;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--teal);
+    }
+
+    /* ── Results ── */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .result-card {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .result-num {
+      font-size: 2rem; font-weight: 800;
+      color: var(--amber);
+      line-height: 1;
+    }
+
+    .result-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.8);
+      margin-top: 6px;
+    }
+
+    /* ── Contact ── */
+    .contact-list { list-style: none; display: flex; flex-wrap: wrap; gap: 16px; }
+    .contact-list li a {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.95rem; font-weight: 600;
+      color: var(--navy);
+      background: var(--light);
+      border: 1px solid var(--border);
+      padding: 10px 18px;
+      border-radius: 6px;
+      transition: background 0.15s;
+    }
+    .contact-list li a:hover { background: var(--border); color: var(--navy); }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 24px;
+      font-size: 0.85rem;
+    }
+
+    footer a { color: rgba(255,255,255,0.7); }
+    footer a:hover { color: var(--amber); }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .stats-bar { flex-direction: column; }
+      .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); }
+      .stat:last-child { border-bottom: none; }
+      .header-links { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="avatar">MM</div>
+  <h1>Mehran Moghadasi</h1>
+  <p class="title">WordPress Developer &amp; Digital Marketing Manager</p>
+  <p class="location">📍 Edmonton, Alberta, Canada &nbsp;|&nbsp; Open to Work &nbsp;|&nbsp; Open Work Permit</p>
+  <div class="header-links">
+    <a href="https://linkedin.com/in/mehranmoghadasi" class="btn btn-white" target="_blank">💼 LinkedIn</a>
+    <a href="https://github.com/mehranmoghadasi" class="btn btn-outline" target="_blank">🐙 GitHub</a>
+    <a href="mailto:mehran.moghadasi@gmail.com" class="btn btn-amber">✉️ Email Me</a>
+  </div>
+</header>
+
+<!-- Stats bar -->
+<div class="stats-bar">
+  <div class="stat">
+    <span class="stat-num">13+</span>
+    <span class="stat-label">Years Experience</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">30+</span>
+    <span class="stat-label">Client Websites</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">70%</span>
+    <span class="stat-label">Max Customer Growth</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">$5K</span>
+    <span class="stat-label">Max Monthly Ad Spend Managed</span>
+  </div>
+</div>
+
+<!-- About -->
+<div class="container">
+  <section>
+    <h2>About Me</h2>
+    <div class="about-text">
+      <p>I'm a WordPress developer and digital marketing manager with 13+ years of experience helping local service businesses and professional services grow online. I've built and optimized 30+ live client websites and managed Google Ads campaigns ranging from $900 to $5,000/month.</p>
+      <p>My work sits at the intersection of technical web development and data-driven marketing — I don't just build websites, I build systems that generate leads and measurable revenue. My campaigns have delivered up to 70% customer acquisition increases within 30 days.</p>
+      <p>Based in Edmonton, Alberta. Authorized to work in Canada without employer sponsorship.</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>WordPress</h3>
+        <ul>
+          <li>Custom theme development</li>
+          <li>Plugin configuration</li>
+          <li>Performance optimization</li>
+          <li>WooCommerce</li>
+          <li>Page builders</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>SEO</h3>
+        <ul>
+          <li>Technical SEO audits</li>
+          <li>On-page optimization</li>
+          <li>Local SEO (GBP)</li>
+          <li>Schema markup</li>
+          <li>Core Web Vitals</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Paid Advertising</h3>
+        <ul>
+          <li>Google Ads</li>
+          <li>Meta Ads (Instagram)</li>
+          <li>ROAS optimization</li>
+          <li>Remarketing / RLSA</li>
+          <li>Conversion tracking</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Social Media</h3>
+        <ul>
+          <li>Instagram (organic + paid)</li>
+          <li>Telegram community building</li>
+          <li>Content strategy</li>
+          <li>Campaign management</li>
+          <li>Analytics & reporting</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Development</h3>
+        <ul>
+          <li>PHP</li>
+          <li>HTML / CSS</li>
+          <li>Python (SEO scripts)</li>
+          <li>JavaScript</li>
+          <li>MySQL / WP Database</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Tools</h3>
+        <ul>
+          <li>Google Ads Manager</li>
+          <li>Google Analytics 4</li>
+          <li>Google Search Console</li>
+          <li>Moz / Screaming Frog</li>
+          <li>Mailchimp / CRM</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section>
+    <h2>Portfolio Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-icon">⚡</div>
+        <h3>WordPress Performance Optimization</h3>
+        <p>PHP optimization toolkit, Apache config, and 50-point checklist. Reduced load times from 7.2s to 2.9s on real client sites.</p>
+        <div>
+          <span class="project-tag">PHP</span>
+          <span class="project-tag">WordPress</span>
+          <span class="project-tag">Apache</span>
+        </div>
+        <a class="project-link" href="https://github.com/mehranmoghadasi/wordpress-performance-optimization" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🔍</div>
+        <h3>Technical SEO Audit Framework</h3>
+        <p>Python URL checker with redirect detection, JSON-LD schema templates for 6 business types, and SEO severity scoring.</p>
+        <div>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">SEO</span>
+          <span class="project-tag">JSON-LD</span>
+        </div>
+        <a class="project-link" href="https://github.com/mehranmoghadasi/technical-seo-audit-framework" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">📊</div>
+        <h3>Google Ads Campaign Playbook</h3>
+        <p>4-phase campaign framework with Python ROAS/budget calculator covering 8 industries and multi-scenario comparisons.</p>
+        <div>
+          <span class="project-tag">Google Ads</span>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">ROAS</span>
+        </div>
+        <a class="project-link" href="https://github.com/mehranmoghadasi/google-ads-campaign-playbook" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🏠</div>
+        <h3>WordPress Lead Generation Starter</h3>
+        <p>Conversion-optimized starter theme for service businesses. AJAX contact form, schema markup, GA4 tracking, click-to-call.</p>
+        <div>
+          <span class="project-tag">PHP</span>
+          <span class="project-tag">CSS</span>
+          <span class="project-tag">WordPress</span>
+        </div>
+        <a class="project-link" href="https://github.com/mehranmoghadasi/wordpress-lead-generation-starter" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">📈</div>
+        <h3>Digital Marketing Case Studies</h3>
+        <p>Anonymized real campaign results — e-commerce Google Ads (ROAS 1.4x→5.0x), local SEO (+248% organic), multi-channel (+70% enrollments).</p>
+        <div>
+          <span class="project-tag">Google Ads</span>
+          <span class="project-tag">SEO</span>
+          <span class="project-tag">Instagram</span>
+        </div>
+        <a class="project-link" href="https://github.com/mehranmoghadasi/digital-marketing-case-studies" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">📱</div>
+        <h3>Social Media Marketing Playbook</h3>
+        <p>Instagram + Telegram strategy guides with 30-day content calendar. Built from managing 15+ client social campaigns.</p>
+        <div>
+          <span class="project-tag">Instagram</span>
+          <span class="project-tag">Telegram</span>
+          <span class="project-tag">Meta Ads</span>
+        </div>
+        <a class="project-link" href="https://github.com/mehranmoghadasi/social-media-marketing-playbook" target="_blank">View on GitHub →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section>
+    <h2>Career Highlights</h2>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-num">70%</div>
+        <div class="result-label">Max customer acquisition increase in 30 days</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">5.0x</div>
+        <div class="result-label">ROAS achieved on e-commerce Google Ads campaign</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">+248%</div>
+        <div class="result-label">Organic traffic increase in 45 days (local SEO)</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">2.9s</div>
+        <div class="result-label">Page load time after WordPress optimization (from 7.2s)</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">30+</div>
+        <div class="result-label">Live client websites built and optimized</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">10</div>
+        <div class="result-label">Person team led as digital marketing manager</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section>
+    <h2>Get in Touch</h2>
+    <p style="margin-bottom:20px; color:var(--muted);">Open to full-time opportunities in Edmonton, Alberta and across Canada.</p>
+    <ul class="contact-list">
+      <li><a href="mailto:mehran.moghadasi@gmail.com">✉️ mehran.moghadasi@gmail.com</a></li>
+      <li><a href="https://linkedin.com/in/mehranmoghadasi" target="_blank">💼 LinkedIn</a></li>
+      <li><a href="https://github.com/mehranmoghadasi" target="_blank">🐙 GitHub</a></li>
+    </ul>
+  </section>
+</div>
+
+<footer>
+  <p>Mehran Moghadasi &nbsp;|&nbsp; Edmonton, Alberta, Canada &nbsp;|&nbsp;
+    <a href="https://github.com/mehranmoghadasi">github.com/mehranmoghadasi</a>
+  </p>
+</footer>
+
+</body>
+</html>
