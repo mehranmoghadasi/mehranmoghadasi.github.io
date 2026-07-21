@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mehran Moghadasi — WordPress Developer & Digital Marketing Manager</title>
-  <meta name="description" content="Mehran Moghadasi — WordPress Developer and Digital Marketing Manager based in Edmonton, Alberta. 13+ years experience, 30+ client websites, Google Ads, SEO, Instagram, Telegram.">
+  <title>Mehran Moghadasi — Digital Marketing & Brand Manager</title>
+  <meta name="description" content="Mehran Moghadasi — Digital Marketing & Brand Manager at AM PM Properties Inc, based in Calgary, Alberta. 13+ years across Canada and international markets. SEO, Google Ads, Meta Ads, WordPress, and marketing automation.">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -56,8 +56,14 @@
 
     header .title {
       font-size: 1.1rem;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 18px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 8px;
+    }
+
+    header .role-line {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 6px;
     }
 
     header .location {
@@ -213,6 +219,99 @@
       color: var(--teal);
     }
 
+    /* ── Experience timeline ── */
+    .timeline { display: flex; flex-direction: column; gap: 20px; }
+
+    .exp-card {
+      background: var(--light);
+      border-left: 4px solid var(--teal);
+      border-radius: 6px;
+      padding: 18px 22px;
+    }
+
+    .exp-card.current {
+      border-left-color: var(--amber);
+      background: #fff8f0;
+    }
+
+    .exp-head {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      flex-wrap: wrap; gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .exp-title {
+      font-size: 1rem;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .exp-title .company { color: var(--teal); }
+
+    .exp-dates {
+      font-size: 0.8rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .exp-location {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+
+    .exp-desc {
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .current-badge {
+      display: inline-block;
+      background: var(--amber);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* ── Education ── */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .edu-card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px 22px;
+    }
+
+    .edu-degree {
+      font-size: 0.95rem;
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .edu-school {
+      font-size: 0.88rem;
+      color: var(--teal);
+      margin-bottom: 4px;
+    }
+
+    .edu-dates {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
     /* ── Results ── */
     .results-grid {
       display: grid;
@@ -272,6 +371,7 @@
       .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); }
       .stat:last-child { border-bottom: none; }
       .header-links { flex-direction: column; align-items: center; }
+      .exp-head { flex-direction: column; }
     }
   </style>
 </head>
@@ -281,11 +381,12 @@
 <header>
   <div class="avatar">MM</div>
   <h1>Mehran Moghadasi</h1>
-  <p class="title">WordPress Developer &amp; Digital Marketing Manager</p>
-  <p class="location">📍 Edmonton, Alberta, Canada &nbsp;|&nbsp; Open to Work &nbsp;|&nbsp; Open Work Permit</p>
+  <p class="title">Digital Marketing &amp; Brand Manager</p>
+  <p class="role-line">SEO &nbsp;·&nbsp; Google Ads &nbsp;·&nbsp; Meta Ads &nbsp;·&nbsp; Social Media</p>
+  <p class="location">📍 Calgary, Alberta, Canada &nbsp;|&nbsp; @ AM PM Properties Inc &nbsp;|&nbsp; Authorized to work in Canada</p>
   <div class="header-links">
-    <a href="https://linkedin.com/in/mehranmoghadasi" class="btn btn-white" target="_blank">💼 LinkedIn</a>
-    <a href="https://github.com/mehranmoghadasi" class="btn btn-outline" target="_blank">🐙 GitHub</a>
+    <a href="https://www.linkedin.com/in/mehranmoghadasi" class="btn btn-white" target="_blank" rel="noopener">💼 LinkedIn</a>
+    <a href="https://github.com/mehranmoghadasi" class="btn btn-outline" target="_blank" rel="noopener">🐙 GitHub</a>
     <a href="mailto:mehran.moghadasi@gmail.com" class="btn btn-amber">✉️ Email Me</a>
   </div>
 </header>
@@ -298,15 +399,15 @@
   </div>
   <div class="stat">
     <span class="stat-num">30+</span>
-    <span class="stat-label">Client Websites</span>
+    <span class="stat-label">WordPress Sites Built</span>
   </div>
   <div class="stat">
-    <span class="stat-num">70%</span>
-    <span class="stat-label">Max Customer Growth</span>
+    <span class="stat-num">5.0x</span>
+    <span class="stat-label">Max ROAS Delivered</span>
   </div>
   <div class="stat">
     <span class="stat-num">$5K</span>
-    <span class="stat-label">Max Monthly Ad Spend Managed</span>
+    <span class="stat-label">Monthly Ad Budget Managed</span>
   </div>
 </div>
 
@@ -315,24 +416,95 @@
   <section>
     <h2>About Me</h2>
     <div class="about-text">
-      <p>I'm a WordPress developer and digital marketing manager with 13+ years of experience helping local service businesses and professional services grow online. I've built and optimized 30+ live client websites and managed Google Ads campaigns ranging from $900 to $5,000/month.</p>
-      <p>My work sits at the intersection of technical web development and data-driven marketing — I don't just build websites, I build systems that generate leads and measurable revenue. My campaigns have delivered up to 70% customer acquisition increases within 30 days.</p>
-      <p>Based in Edmonton, Alberta. Authorized to work in Canada without employer sponsorship.</p>
+      <p>Over 13 years of digital marketing and brand management experience, working across international markets and now based in Calgary, Alberta.</p>
+      <p>I currently serve as <strong>Digital Marketing &amp; Brand Manager at AM PM Properties Inc.</strong>, where I lead all brand, digital, and online growth initiatives for one of Calgary's expanding property management companies. The role covers brand strategy, SEO, paid advertising, social media, content creation, online reputation management, and monthly performance reporting.</p>
+      <p>Before relocating to Canada, I spent over a decade managing digital marketing and web development for 10+ clients simultaneously across service, e-commerce, and professional-services industries. I work at the intersection of strategy and execution — I can develop a brand from the ground up, run the campaigns that make it visible, and read the data that keeps it growing.</p>
+      <p><em>Based in Calgary, AB · Authorized to work in Canada without employer sponsorship.</em></p>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section>
+    <h2>Experience</h2>
+    <div class="timeline">
+
+      <div class="exp-card current">
+        <div class="exp-head">
+          <div class="exp-title">Digital Marketing &amp; Brand Manager <span class="current-badge">Current</span><br/><span class="company">AM PM Properties Inc</span></div>
+          <div class="exp-dates">Jul 2026 – Present</div>
+        </div>
+        <div class="exp-location">Calgary, AB, Canada · On-site · Full-time</div>
+        <div class="exp-desc">Leading corporate marketing, branding, and digital growth for a Calgary-based boutique property management company managing <strong>600+ residential properties</strong>. Brand strategy, SEO, Google Ads &amp; Meta Ads, social media across Facebook / Instagram / LinkedIn / TikTok / YouTube, reputation management (maintaining 4.8★+), PR, and monthly performance reporting.</div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-head">
+          <div class="exp-title">Digital Marketing Consultant<br/><span class="company">Upwork · Freelance</span></div>
+          <div class="exp-dates">Jan 2026 – Jun 2026</div>
+        </div>
+        <div class="exp-location">Edmonton, AB, Canada · Remote</div>
+        <div class="exp-desc">Consulting and execution for SMBs during the transition to the Canadian market — SEO audits, on-page and technical improvements, Meta and Google Ads campaigns, WordPress builds, content strategy, and monthly performance reports with actionable recommendations.</div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-head">
+          <div class="exp-title">Web &amp; Digital Marketing Manager<br/><span class="company">Fanavari Rayan Mehr Rahjoo LLC</span></div>
+          <div class="exp-dates">Oct 2018 – Dec 2025 · 7 yrs</div>
+        </div>
+        <div class="exp-location">Tehran Province, Iran · On-site · Full-time</div>
+        <div class="exp-desc">Managed digital marketing strategy, brand development, and web operations for <strong>10+ clients simultaneously</strong>. Led a cross-functional team of 10 (design, SEO, content, ad managers). Ran Google Ads campaigns with monthly budgets from $900–$5,000/client, achieved <strong>ROAS of 5.0x</strong>, reduced cost per lead by up to <strong>54%</strong>, and drove Meta Ads campaigns delivering up to <strong>70% customer acquisition growth</strong> in 30 days.</div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-head">
+          <div class="exp-title">Senior Web Developer &amp; Digital Marketing Specialist<br/><span class="company">Persia Mehr Co.</span></div>
+          <div class="exp-dates">Oct 2012 – Sep 2018 · 6 yrs</div>
+        </div>
+        <div class="exp-location">Tehran Province, Iran · On-site · Full-time</div>
+        <div class="exp-desc">Designed, developed, and marketed custom WordPress websites for local businesses and professional-services clients. Performed technical SEO audits, on-page SEO, local SEO (Google Business Profile, citations, review generation), and achieved <strong>page 1 Google rankings for 12+ local businesses within 45 days</strong>.</div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-head">
+          <div class="exp-title">Web Developer<br/><span class="company">Iricom IT Center</span></div>
+          <div class="exp-dates">Oct 2011 – Oct 2012 · 1 yr</div>
+        </div>
+        <div class="exp-location">Isfahan Province, Iran · On-site · Internship</div>
+        <div class="exp-desc">Entry-level web development and IT support — built and maintained web interfaces for internal and client-facing systems, configured networks and VoIP platforms, and supported infrastructure. The technical foundation for a decade of marketing-engineering work.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section>
+    <h2>Education</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-degree">Master's Degree, Industrial Engineering</div>
+        <div class="edu-school">Islamic Azad University, Science and Research Branch, Tehran</div>
+        <div class="edu-dates">2012 – 2015</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Bachelor of Science, Computer Hardware Engineering</div>
+        <div class="edu-school">University of Isfahan</div>
+        <div class="edu-dates">2007 – 2012</div>
+      </div>
     </div>
   </section>
 
   <!-- Skills -->
   <section>
-    <h2>Technical Skills</h2>
+    <h2>Technical &amp; Marketing Skills</h2>
     <div class="skills-grid">
       <div class="skill-card">
-        <h3>WordPress</h3>
+        <h3>Brand &amp; Digital Marketing</h3>
         <ul>
-          <li>Custom theme development</li>
-          <li>Plugin configuration</li>
-          <li>Performance optimization</li>
-          <li>WooCommerce</li>
-          <li>Page builders</li>
+          <li>Brand strategy &amp; identity</li>
+          <li>Multi-channel campaigns</li>
+          <li>Editorial calendars</li>
+          <li>Online reputation management</li>
+          <li>PR &amp; media relations</li>
         </ul>
       </div>
       <div class="skill-card">
@@ -340,16 +512,16 @@
         <ul>
           <li>Technical SEO audits</li>
           <li>On-page optimization</li>
-          <li>Local SEO (GBP)</li>
-          <li>Schema markup</li>
+          <li>Local SEO (GBP + citations)</li>
+          <li>Schema markup (JSON-LD)</li>
           <li>Core Web Vitals</li>
         </ul>
       </div>
       <div class="skill-card">
         <h3>Paid Advertising</h3>
         <ul>
-          <li>Google Ads</li>
-          <li>Meta Ads (Instagram)</li>
+          <li>Google Ads (Search / PMax)</li>
+          <li>Meta Ads (Facebook / Instagram)</li>
           <li>ROAS optimization</li>
           <li>Remarketing / RLSA</li>
           <li>Conversion tracking</li>
@@ -358,30 +530,50 @@
       <div class="skill-card">
         <h3>Social Media</h3>
         <ul>
-          <li>Instagram (organic + paid)</li>
-          <li>Telegram community building</li>
+          <li>Facebook &amp; Instagram</li>
+          <li>LinkedIn &amp; TikTok</li>
+          <li>YouTube &amp; short-form video</li>
           <li>Content strategy</li>
-          <li>Campaign management</li>
-          <li>Analytics & reporting</li>
+          <li>Engagement growth</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>WordPress</h3>
+        <ul>
+          <li>Custom theme development</li>
+          <li>Plugin configuration</li>
+          <li>Performance optimization</li>
+          <li>WooCommerce</li>
+          <li>ACF &amp; page builders</li>
         </ul>
       </div>
       <div class="skill-card">
         <h3>Development</h3>
         <ul>
           <li>PHP</li>
-          <li>HTML / CSS</li>
-          <li>Python (SEO scripts)</li>
-          <li>JavaScript</li>
+          <li>Python (marketing scripts, CLIs)</li>
+          <li>JavaScript / Node.js</li>
+          <li>HTML / CSS / Tailwind</li>
           <li>MySQL / WP Database</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Analytics &amp; Tracking</h3>
+        <ul>
+          <li>Google Analytics 4</li>
+          <li>Google Tag Manager</li>
+          <li>Google Search Console</li>
+          <li>Looker Studio</li>
+          <li>GA4 Data API</li>
         </ul>
       </div>
       <div class="skill-card">
         <h3>Tools</h3>
         <ul>
           <li>Google Ads Manager</li>
-          <li>Google Analytics 4</li>
-          <li>Google Search Console</li>
-          <li>Moz / Screaming Frog</li>
+          <li>Meta Business Suite</li>
+          <li>HubSpot</li>
+          <li>Screaming Frog</li>
           <li>Mailchimp / CRM</li>
         </ul>
       </div>
@@ -390,82 +582,109 @@
 
   <!-- Portfolio -->
   <section>
-    <h2>Portfolio Projects</h2>
+    <h2>Featured Open-Source Projects</h2>
     <div class="projects-grid">
 
       <div class="project-card">
-        <div class="project-icon">⚡</div>
-        <h3>WordPress Performance Optimization</h3>
-        <p>PHP optimization toolkit, Apache config, and 50-point checklist. Reduced load times from 7.2s to 2.9s on real client sites.</p>
+        <div class="project-icon">🧠</div>
+        <h3>LLM Content Brief Engine</h3>
+        <p>Python CLI that turns any keyword into a structured SEO content brief — crawls top SERP results, extracts headings / entities / PAA via BeautifulSoup, synthesizes recommendations with OpenAI.</p>
         <div>
-          <span class="project-tag">PHP</span>
-          <span class="project-tag">WordPress</span>
-          <span class="project-tag">Apache</span>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">SEO</span>
+          <span class="project-tag">OpenAI</span>
         </div>
-        <a class="project-link" href="https://github.com/mehranmoghadasi/wordpress-performance-optimization" target="_blank">View on GitHub →</a>
+        <a class="project-link" href="https://github.com/mehranmoghadasi/llm-content-brief-engine" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">📊</div>
+        <h3>Agency Report Builder</h3>
+        <p>Python CLI that pulls GA4 + Google Search Console data, renders a branded HTML report with period-over-period comparisons, and exports to PDF in one command — built for digital marketing agencies.</p>
+        <div>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">GA4</span>
+          <span class="project-tag">Reporting</span>
+        </div>
+        <a class="project-link" href="https://github.com/mehranmoghadasi/agency-report-builder" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🧪</div>
+        <h3>GA4 Event Auditor</h3>
+        <p>Python CLI that audits GA4 event implementations by comparing live event data against a measurement plan — flags missing events, parameter mismatches, and naming inconsistencies before they corrupt reports.</p>
+        <div>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">GA4</span>
+          <span class="project-tag">Analytics</span>
+        </div>
+        <a class="project-link" href="https://github.com/mehranmoghadasi/ga4-event-auditor" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🎯</div>
+        <h3>Google Ads Negative Keyword Manager</h3>
+        <p>Python CLI that analyzes Google Ads search-term reports to suggest, deduplicate, and export campaign-level negative keywords — saving hours of manual account hygiene every week.</p>
+        <div>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Google Ads</span>
+          <span class="project-tag">PPC</span>
+        </div>
+        <a class="project-link" href="https://github.com/mehranmoghadasi/google-ads-negative-keyword-manager" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
 
       <div class="project-card">
         <div class="project-icon">🔍</div>
         <h3>Technical SEO Audit Framework</h3>
-        <p>Python URL checker with redirect detection, JSON-LD schema templates for 6 business types, and SEO severity scoring.</p>
+        <p>Crawl-aware audit framework with a Python URL checker, redirect detection, JSON-LD schema templates for 6 business types, and SEO severity scoring — built for site-wide audits across 100+ pages.</p>
         <div>
           <span class="project-tag">Python</span>
           <span class="project-tag">SEO</span>
           <span class="project-tag">JSON-LD</span>
         </div>
-        <a class="project-link" href="https://github.com/mehranmoghadasi/technical-seo-audit-framework" target="_blank">View on GitHub →</a>
+        <a class="project-link" href="https://github.com/mehranmoghadasi/technical-seo-audit-framework" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
 
       <div class="project-card">
-        <div class="project-icon">📊</div>
-        <h3>Google Ads Campaign Playbook</h3>
-        <p>4-phase campaign framework with Python ROAS/budget calculator covering 8 industries and multi-scenario comparisons.</p>
+        <div class="project-icon">⚡</div>
+        <h3>WordPress Performance Optimization</h3>
+        <p>PHP optimization toolkit, Apache/.htaccess config, and 50-point checklist for getting Core Web Vitals into the green. Reduced load times from 7.2s to 2.9s on real client sites.</p>
         <div>
-          <span class="project-tag">Google Ads</span>
-          <span class="project-tag">Python</span>
-          <span class="project-tag">ROAS</span>
+          <span class="project-tag">PHP</span>
+          <span class="project-tag">WordPress</span>
+          <span class="project-tag">Web Vitals</span>
         </div>
-        <a class="project-link" href="https://github.com/mehranmoghadasi/google-ads-campaign-playbook" target="_blank">View on GitHub →</a>
+        <a class="project-link" href="https://github.com/mehranmoghadasi/wordpress-performance-optimization" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
 
       <div class="project-card">
         <div class="project-icon">🏠</div>
         <h3>WordPress Lead Generation Starter</h3>
-        <p>Conversion-optimized starter theme for service businesses. AJAX contact form, schema markup, GA4 tracking, click-to-call.</p>
+        <p>Conversion-optimized WordPress starter theme for service businesses — AJAX contact form, schema markup, GA4 tracking, click-to-call, and lead-capture patterns built for speed and trust signals.</p>
         <div>
           <span class="project-tag">PHP</span>
-          <span class="project-tag">CSS</span>
           <span class="project-tag">WordPress</span>
+          <span class="project-tag">CRO</span>
         </div>
-        <a class="project-link" href="https://github.com/mehranmoghadasi/wordpress-lead-generation-starter" target="_blank">View on GitHub →</a>
+        <a class="project-link" href="https://github.com/mehranmoghadasi/wordpress-lead-generation-starter" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
 
       <div class="project-card">
         <div class="project-icon">📈</div>
-        <h3>Digital Marketing Case Studies</h3>
-        <p>Anonymized real campaign results — e-commerce Google Ads (ROAS 1.4x→5.0x), local SEO (+248% organic), multi-channel (+70% enrollments).</p>
+        <h3>Google Ads Campaign Playbook</h3>
+        <p>4-phase Google Ads strategy framework paired with a Python ROAS / budget calculator covering 8 industries and multi-scenario comparisons — decision framework and executable math in one repo.</p>
         <div>
           <span class="project-tag">Google Ads</span>
-          <span class="project-tag">SEO</span>
-          <span class="project-tag">Instagram</span>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">ROAS</span>
         </div>
-        <a class="project-link" href="https://github.com/mehranmoghadasi/digital-marketing-case-studies" target="_blank">View on GitHub →</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">📱</div>
-        <h3>Social Media Marketing Playbook</h3>
-        <p>Instagram + Telegram strategy guides with 30-day content calendar. Built from managing 15+ client social campaigns.</p>
-        <div>
-          <span class="project-tag">Instagram</span>
-          <span class="project-tag">Telegram</span>
-          <span class="project-tag">Meta Ads</span>
-        </div>
-        <a class="project-link" href="https://github.com/mehranmoghadasi/social-media-marketing-playbook" target="_blank">View on GitHub →</a>
+        <a class="project-link" href="https://github.com/mehranmoghadasi/google-ads-campaign-playbook" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
 
     </div>
+    <p style="margin-top:22px; font-size:0.9rem; color:var(--muted); text-align:center;">
+      → <a href="https://github.com/mehranmoghadasi?tab=repositories&type=source&sort=updated"><strong>Browse all 20+ public repositories on GitHub</strong></a>
+    </p>
   </section>
 
   <!-- Results -->
@@ -474,27 +693,35 @@
     <div class="results-grid">
       <div class="result-card">
         <div class="result-num">70%</div>
-        <div class="result-label">Max customer acquisition increase in 30 days</div>
+        <div class="result-label">Max customer acquisition growth in 30 days (Meta Ads)</div>
       </div>
       <div class="result-card">
         <div class="result-num">5.0x</div>
         <div class="result-label">ROAS achieved on e-commerce Google Ads campaign</div>
       </div>
       <div class="result-card">
-        <div class="result-num">+248%</div>
-        <div class="result-label">Organic traffic increase in 45 days (local SEO)</div>
-      </div>
-      <div class="result-card">
-        <div class="result-num">2.9s</div>
-        <div class="result-label">Page load time after WordPress optimization (from 7.2s)</div>
+        <div class="result-num">54%</div>
+        <div class="result-label">Cost-per-lead reduction via segmentation &amp; RLSA</div>
       </div>
       <div class="result-card">
         <div class="result-num">30+</div>
-        <div class="result-label">Live client websites built and optimized</div>
+        <div class="result-label">WordPress websites built &amp; optimized</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">&lt;3s</div>
+        <div class="result-label">Average load time (from 6–7s) via caching + CDN + PHP tuning</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">12+</div>
+        <div class="result-label">Local businesses ranked on page 1 within 45 days</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">10+</div>
+        <div class="result-label">Clients managed simultaneously over a 7-year period</div>
       </div>
       <div class="result-card">
         <div class="result-num">10</div>
-        <div class="result-label">Person team led as digital marketing manager</div>
+        <div class="result-label">Person cross-functional team led (design, SEO, content, ads)</div>
       </div>
     </div>
   </section>
@@ -502,19 +729,21 @@
   <!-- Contact -->
   <section>
     <h2>Get in Touch</h2>
-    <p style="margin-bottom:20px; color:var(--muted);">Open to full-time opportunities in Edmonton, Alberta and across Canada.</p>
+    <p style="margin-bottom:20px; color:var(--muted);">Currently serving as <strong>Digital Marketing &amp; Brand Manager at AM PM Properties Inc</strong> in Calgary. Open to industry connections, collaboration on open-source marketing tooling, and speaking or consulting inquiries.</p>
     <ul class="contact-list">
       <li><a href="mailto:mehran.moghadasi@gmail.com">✉️ mehran.moghadasi@gmail.com</a></li>
-      <li><a href="https://linkedin.com/in/mehranmoghadasi" target="_blank">💼 LinkedIn</a></li>
-      <li><a href="https://github.com/mehranmoghadasi" target="_blank">🐙 GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/mehranmoghadasi" target="_blank" rel="noopener">💼 LinkedIn</a></li>
+      <li><a href="https://github.com/mehranmoghadasi" target="_blank" rel="noopener">🐙 GitHub</a></li>
     </ul>
   </section>
 </div>
 
 <footer>
-  <p>Mehran Moghadasi &nbsp;|&nbsp; Edmonton, Alberta, Canada &nbsp;|&nbsp;
+  <p>Mehran Moghadasi &nbsp;|&nbsp; Calgary, Alberta, Canada &nbsp;|&nbsp;
     <a href="https://github.com/mehranmoghadasi">github.com/mehranmoghadasi</a>
-  </p>
+    &nbsp;|&nbsp;
+    <a href="https://www.linkedin.com/in/mehranmoghadasi">linkedin.com/in/mehranmoghadasi</a>
+  </a>
 </footer>
 
 </body>
