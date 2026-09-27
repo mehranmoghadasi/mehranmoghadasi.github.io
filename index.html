@@ -1,750 +1,491 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mehran Moghadasi — Digital Marketing & Brand Manager</title>
-  <meta name="description" content="Mehran Moghadasi — Digital Marketing & Brand Manager at AM PM Properties Inc, based in Calgary, Alberta. 13+ years across Canada and international markets. SEO, Google Ads, Meta Ads, WordPress, and marketing automation.">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --navy: #1a3a5c;
-      --teal: #0d6e6e;
-      --amber: #e8751a;
-      --light: #f7f9fc;
-      --text: #2c2c2c;
-      --muted: #666;
-      --border: #dde3eb;
-      --white: #fff;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.65;
-      font-size: 16px;
-    }
-
-    a { color: var(--teal); text-decoration: none; }
-    a:hover { color: var(--amber); }
-
-    /* ── Header ── */
-    header {
-      background: linear-gradient(135deg, var(--navy) 0%, #0d2d50 100%);
-      color: #fff;
-      padding: 60px 24px 50px;
-      text-align: center;
-    }
-
-    .avatar {
-      width: 96px; height: 96px;
-      border-radius: 50%;
-      background: var(--teal);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.4rem; font-weight: 800; color: #fff;
-      margin: 0 auto 20px;
-      border: 3px solid rgba(255,255,255,0.3);
-    }
-
-    header h1 {
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      color: #fff;
-      margin-bottom: 8px;
-    }
-
-    header .title {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 8px;
-    }
-
-    header .role-line {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 6px;
-    }
-
-    header .location {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.6);
-      margin-bottom: 28px;
-    }
-
-    .header-links {
-      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 9px 20px;
-      border-radius: 5px;
-      font-size: 0.9rem; font-weight: 700;
-      transition: opacity 0.15s;
-    }
-    .btn:hover { opacity: 0.85; }
-
-    .btn-white  { background: #fff; color: var(--navy); }
-    .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); }
-    .btn-amber  { background: var(--amber); color: #fff; }
-
-    /* ── Stats bar ── */
-    .stats-bar {
-      background: var(--amber);
-      display: flex; justify-content: center; gap: 0; flex-wrap: wrap;
-    }
-
-    .stat {
-      padding: 18px 32px;
-      text-align: center;
-      color: #fff;
-      border-right: 1px solid rgba(255,255,255,0.25);
-    }
-    .stat:last-child { border-right: none; }
-
-    .stat-num {
-      display: block;
-      font-size: 1.6rem; font-weight: 800; line-height: 1;
-    }
-
-    .stat-label {
-      font-size: 0.78rem; opacity: 0.9; margin-top: 2px;
-    }
-
-    /* ── Main layout ── */
-    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
-
-    section { padding: 50px 0; }
-    section + section { border-top: 1px solid var(--border); }
-
-    h2 {
-      font-size: 1.4rem;
-      color: var(--navy);
-      margin-bottom: 24px;
-      padding-bottom: 8px;
-      border-bottom: 3px solid var(--teal);
-      display: inline-block;
-    }
-
-    /* ── About ── */
-    .about-text { font-size: 1.05rem; color: var(--text); max-width: 720px; }
-    .about-text p { margin-bottom: 14px; }
-
-    /* ── Skills grid ── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 16px;
-      margin-top: 8px;
-    }
-
-    .skill-card {
-      background: var(--light);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 16px 18px;
-    }
-
-    .skill-card h3 {
-      font-size: 0.85rem;
-      color: var(--teal);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 8px;
-    }
-
-    .skill-card ul { list-style: none; }
-    .skill-card li {
-      font-size: 0.9rem;
-      color: var(--text);
-      padding: 2px 0;
-    }
-    .skill-card li::before { content: "• "; color: var(--amber); }
-
-    /* ── Projects ── */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .project-card {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 20px;
-      transition: box-shadow 0.2s, transform 0.2s;
-      display: flex; flex-direction: column;
-    }
-
-    .project-card:hover {
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-      transform: translateY(-2px);
-    }
-
-    .project-icon {
-      font-size: 1.6rem; margin-bottom: 10px;
-    }
-
-    .project-card h3 {
-      font-size: 0.95rem;
-      color: var(--navy);
-      margin-bottom: 6px;
-    }
-
-    .project-card p {
-      font-size: 0.88rem;
-      color: var(--muted);
-      flex: 1;
-      margin-bottom: 14px;
-    }
-
-    .project-tag {
-      display: inline-block;
-      background: #e8f4f4;
-      color: var(--teal);
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 3px;
-      margin-right: 4px;
-      margin-bottom: 4px;
-    }
-
-    .project-link {
-      display: inline-flex; align-items: center; gap: 4px;
-      margin-top: 12px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--teal);
-    }
-
-    /* ── Experience timeline ── */
-    .timeline { display: flex; flex-direction: column; gap: 20px; }
-
-    .exp-card {
-      background: var(--light);
-      border-left: 4px solid var(--teal);
-      border-radius: 6px;
-      padding: 18px 22px;
-    }
-
-    .exp-card.current {
-      border-left-color: var(--amber);
-      background: #fff8f0;
-    }
-
-    .exp-head {
-      display: flex; justify-content: space-between; align-items: flex-start;
-      flex-wrap: wrap; gap: 8px;
-      margin-bottom: 6px;
-    }
-
-    .exp-title {
-      font-size: 1rem;
-      color: var(--navy);
-      font-weight: 700;
-    }
-
-    .exp-title .company { color: var(--teal); }
-
-    .exp-dates {
-      font-size: 0.8rem;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    .exp-location {
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-style: italic;
-      margin-bottom: 8px;
-    }
-
-    .exp-desc {
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-
-    .current-badge {
-      display: inline-block;
-      background: var(--amber);
-      color: #fff;
-      font-size: 0.7rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 2px 8px;
-      border-radius: 3px;
-      margin-left: 8px;
-      vertical-align: middle;
-    }
-
-    /* ── Education ── */
-    .edu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 16px;
-    }
-
-    .edu-card {
-      background: var(--light);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 18px 22px;
-    }
-
-    .edu-degree {
-      font-size: 0.95rem;
-      color: var(--navy);
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .edu-school {
-      font-size: 0.88rem;
-      color: var(--teal);
-      margin-bottom: 4px;
-    }
-
-    .edu-dates {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    /* ── Results ── */
-    .results-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 16px;
-    }
-
-    .result-card {
-      background: var(--navy);
-      color: #fff;
-      border-radius: 8px;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .result-num {
-      font-size: 2rem; font-weight: 800;
-      color: var(--amber);
-      line-height: 1;
-    }
-
-    .result-label {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.8);
-      margin-top: 6px;
-    }
-
-    /* ── Contact ── */
-    .contact-list { list-style: none; display: flex; flex-wrap: wrap; gap: 16px; }
-    .contact-list li a {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.95rem; font-weight: 600;
-      color: var(--navy);
-      background: var(--light);
-      border: 1px solid var(--border);
-      padding: 10px 18px;
-      border-radius: 6px;
-      transition: background 0.15s;
-    }
-    .contact-list li a:hover { background: var(--border); color: var(--navy); }
-
-    /* ── Footer ── */
-    footer {
-      background: var(--navy);
-      color: rgba(255,255,255,0.55);
-      text-align: center;
-      padding: 24px;
-      font-size: 0.85rem;
-    }
-
-    footer a { color: rgba(255,255,255,0.7); }
-    footer a:hover { color: var(--amber); }
-
-    /* ── Responsive ── */
-    @media (max-width: 600px) {
-      .stats-bar { flex-direction: column; }
-      .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); }
-      .stat:last-child { border-bottom: none; }
-      .header-links { flex-direction: column; align-items: center; }
-      .exp-head { flex-direction: column; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mehran Moghadasi, Computer Engineer and Digital Marketing &amp; Brand Manager</title>
+<meta name="description" content="Computer engineer and digital marketing and brand manager in Calgary. Brand strategy, SEO and paid media, plus tested open-source Python and Node tooling for marketing data quality.">
+<link rel="canonical" href="https://mehranmoghadasi.github.io/">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0E1013">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mehranmoghadasi.github.io/">
+<meta property="og:title" content="Mehran Moghadasi, Computer Engineer and Marketing Leader">
+<meta property="og:description" content="Brand and growth leadership in Calgary, plus open-source tooling that audits tracking and gates client reporting.">
+<meta property="og:image" content="https://mehranmoghadasi.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="me" href="https://www.linkedin.com/in/mehranmoghadasi">
+<link rel="me" href="https://github.com/mehranmoghadasi">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='26' fill='%230E1013'/%3E%3Crect x='6' y='6' width='88' height='88' rx='22' fill='none' stroke='%23E8963C' stroke-width='4'/%3E%3Cpath d='M28 72V28l22 26 22-26v44' fill='none' stroke='%23E9ECEF' stroke-width='8' stroke-linecap='square'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://mehranmoghadasi.github.io/#person",
+  "name": "Mehran Moghadasi",
+  "url": "https://mehranmoghadasi.github.io/",
+  "image": "https://mehranmoghadasi.github.io/og.png",
+  "jobTitle": "Digital Marketing & Brand Manager",
+  "worksFor": { "@type": "Organization", "name": "AM PM Properties Inc" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Calgary", "addressRegion": "AB", "addressCountry": "CA" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "University of Isfahan" },
+    { "@type": "CollegeOrUniversity", "name": "Islamic Azad University, Science and Research Branch" }
+  ],
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "Bachelor's degree, Computer Engineering" },
+    { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "Master's degree, Socio-Economic Systems Engineering" }
+  ],
+  "knowsAbout": ["Computer engineering","Python","Node.js","Brand management","Search engine optimization","Google Ads","Meta Ads","Google Analytics 4","Marketing automation"],
+  "sameAs": ["https://mehranmoghadasi.com","https://github.com/mehranmoghadasi","https://www.linkedin.com/in/mehranmoghadasi"]
+}
+</script>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<!-- Header -->
-<header>
-  <div class="avatar">MM</div>
-  <h1>Mehran Moghadasi</h1>
-  <p class="title">Digital Marketing &amp; Brand Manager</p>
-  <p class="role-line">SEO &nbsp;·&nbsp; Google Ads &nbsp;·&nbsp; Meta Ads &nbsp;·&nbsp; Social Media</p>
-  <p class="location">📍 Calgary, Alberta, Canada &nbsp;|&nbsp; @ AM PM Properties Inc &nbsp;|&nbsp; Authorized to work in Canada</p>
-  <div class="header-links">
-    <a href="https://www.linkedin.com/in/mehranmoghadasi" class="btn btn-white" target="_blank" rel="noopener">💼 LinkedIn</a>
-    <a href="https://github.com/mehranmoghadasi" class="btn btn-outline" target="_blank" rel="noopener">🐙 GitHub</a>
-    <a href="mailto:mehran.moghadasi@gmail.com" class="btn btn-amber">✉️ Email Me</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Mehran Moghadasi, back to top">
+      <svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true">
+        <rect x="4" y="4" width="92" height="92" rx="24" fill="none" stroke="#E8963C" stroke-width="5"/>
+        <path d="M28 72V28l22 26 22-26v44" fill="none" stroke="#E9ECEF" stroke-width="9" stroke-linecap="square"/>
+      </svg>
+      Mehran Moghadasi
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#halves">skills</a>
+      <a href="#work">open source</a>
+      <a href="#experience">experience</a>
+      <a href="#education">education</a>
+      <a class="out" href="https://mehranmoghadasi.com"><span class="long">mehranmoghadasi.com</span><span class="short">Website</span> &#8599;</a>
+    </nav>
   </div>
 </header>
 
-<!-- Stats bar -->
-<div class="stats-bar">
-  <div class="stat">
-    <span class="stat-num">13+</span>
-    <span class="stat-label">Years Experience</span>
+<main id="main">
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><span class="pulse" aria-hidden="true"></span>Calgary, Alberta &middot; open to the right role</span>
+      <h1>Computer engineer.<span class="l2">Marketing and brand leader.</span></h1>
+      <div class="lede">
+        <p>I lead brand and digital growth at <strong>AM PM Properties</strong> in Calgary, and I still write the software my marketing runs on. My degree is in computer engineering; my first career was building for the web; the last decade has been leading the campaigns, brands and teams those systems serve.</p>
+        <p>The result is a marketer who can read a stack trace and an engineer who can run a brand. The tools below are where the two meet.</p>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="#work">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg>
+          See the open source
+        </a>
+        <a class="btn" href="https://github.com/mehranmoghadasi"><svg class="ico " width="15" height="15" style="color:#E9ECEF" aria-hidden="true"><use href="icons.svg#i-github"/></svg> GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/mehranmoghadasi"><svg class="ico " width="15" height="15" style="color:#0A66C2" aria-hidden="true"><use href="icons.svg#i-linkedin"/></svg> LinkedIn</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="term" role="img" aria-label="Terminal showing report-preflight blocking a client report: three failed checks, five warnings, verdict do not send yet">
+        <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>zsh  report-preflight</span></div>
+<pre aria-hidden="true"><span class="ln" style="--i:0"><span class="p">$</span> <span class="c">report-preflight run --client northgate \</span></span><span class="ln" style="--i:1"><span class="c">    --period 2026-08 --exit-code</span></span><span class="ln" style="--i:2"> </span><span class="ln" style="--i:3"><span class="f">FAIL</span>  ga4-response-complete  <span class="dim">3 days truncated</span></span><span class="ln" style="--i:4"><span class="f">FAIL</span>  period-complete        <span class="dim">3 of 31 days missing</span></span><span class="ln" style="--i:5"><span class="f">FAIL</span>  nothing-went-silent    <span class="dim">calls: 0 after 412</span></span><span class="ln" style="--i:6"><span class="w">WARN</span>  consent-stable         <span class="dim">denials +12.0 pts</span></span><span class="ln" style="--i:7"><span class="w">WARN</span>  no-double-counting     <span class="dim">6 of 229 repeated</span></span><span class="ln" style="--i:8"><span class="k">PASS</span>  events-firing          <span class="dim">all events firing</span></span><span class="ln" style="--i:9"><span class="k">PASS</span>  settings-unchanged     <span class="dim">5 settings stable</span></span><span class="ln" style="--i:10"> </span><span class="ln" style="--i:11"><span class="v">DO NOT SEND YET</span>  <span class="dim">3 blocking, 5 warnings</span></span><span class="ln" style="--i:12"><span class="p">$</span> <span class="dim">echo $?</span>  <span class="c">1</span></span></pre>
+      </div>
+      <p class="term-note">marketing-report-preflight, demo client, output abridged</p>
+    </div>
   </div>
-  <div class="stat">
-    <span class="stat-num">30+</span>
-    <span class="stat-label">WordPress Sites Built</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num">5.0x</span>
-    <span class="stat-label">Max ROAS Delivered</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num">$5K</span>
-    <span class="stat-label">Monthly Ad Budget Managed</span>
+</section>
+
+<div class="numbers">
+  <div class="wrap">
+    <div class="nums reveal">
+      <div class="num"><b>10</b><span>open-source tools</span></div>
+      <div class="num"><b>216</b><span>automated tests</span></div>
+      <div class="num"><b>10<em>/</em>10</b><span>repositories with passing CI</span></div>
+      <div class="num"><b>2011</b><span>shipping production code since</span></div>
+      <div class="langs">
+        <span class="lab">Languages across shipped code</span>
+        <div class="bar" role="img" aria-label="Python 78.8 percent, JavaScript 13.1, Jinja 3.7, PHP 2.5, HTML and CSS 1.9"><span style="--w:78.84%;background:#4F8FD0" title="Python 78.8%"></span><span style="--w:13.09%;background:#F7DF1E" title="JavaScript 13.1%"></span><span style="--w:3.69%;background:#E06A5F" title="Jinja 3.7%"></span><span style="--w:2.52%;background:#8892BF" title="PHP 2.5%"></span><span style="--w:1.85%;background:#E34F26" title="HTML & CSS 1.9%"></span></div>
+        <ul class="legend"><li><i style="background:#4F8FD0"></i>Python<b>78.8%</b></li><li><i style="background:#F7DF1E"></i>JavaScript<b>13.1%</b></li><li><i style="background:#E06A5F"></i>Jinja<b>3.7%</b></li><li><i style="background:#8892BF"></i>PHP<b>2.5%</b></li><li><i style="background:#E34F26"></i>HTML &amp; CSS<b>1.9%</b></li></ul>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- About -->
-<div class="container">
-  <section>
-    <h2>About Me</h2>
-    <div class="about-text">
-      <p>Over 13 years of digital marketing and brand management experience, working across international markets and now based in Calgary, Alberta.</p>
-      <p>I currently serve as <strong>Digital Marketing &amp; Brand Manager at AM PM Properties Inc.</strong>, where I lead all brand, digital, and online growth initiatives for one of Calgary's expanding property management companies. The role covers brand strategy, SEO, paid advertising, social media, content creation, online reputation management, and monthly performance reporting.</p>
-      <p>Before relocating to Canada, I spent over a decade managing digital marketing and web development for 10+ clients simultaneously across service, e-commerce, and professional-services industries. I work at the intersection of strategy and execution — I can develop a brand from the ground up, run the campaigns that make it visible, and read the data that keeps it growing.</p>
-      <p><em>Based in Calgary, AB · Authorized to work in Canada without employer sponsorship.</em></p>
+<section class="sec" id="halves">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="t"><span class="num-l">01 / Skills</span><h2>Two halves of the same job</h2></div>
+      <p class="note">Most teams split these between a marketer and a developer. I do both, which is why the handoff between them rarely breaks.</p>
     </div>
-  </section>
-
-  <!-- Experience -->
-  <section>
-    <h2>Experience</h2>
-    <div class="timeline">
-
-      <div class="exp-card current">
-        <div class="exp-head">
-          <div class="exp-title">Digital Marketing &amp; Brand Manager <span class="current-badge">Current</span><br/><span class="company">AM PM Properties Inc</span></div>
-          <div class="exp-dates">Jul 2026 – Present</div>
-        </div>
-        <div class="exp-location">Calgary, AB, Canada · On-site · Full-time</div>
-        <div class="exp-desc">Leading corporate marketing, branding, and digital growth for a Calgary-based boutique property management company managing <strong>600+ residential properties</strong>. Brand strategy, SEO, Google Ads &amp; Meta Ads, social media across Facebook / Instagram / LinkedIn / TikTok / YouTube, reputation management (maintaining 4.8★+), PR, and monthly performance reporting.</div>
+    <div class="halves">
+      <div class="half reveal">
+        <span class="kicker">Computer engineering</span>
+        <h3>Engineering</h3>
+        <p>Python and Node tooling against the GA4 Data API, Search Console API and Google Ads exports. Measurement plans, tracking QA, data-quality gates and report automation, tested and running in CI.</p>
+        <ul class="logos"><li class="logo" style="--brand:#4F8FD0"><svg class="ico " width="22" height="22" style="color:#4F8FD0" aria-hidden="true"><use href="icons.svg#i-python"/></svg><span>Python</span></li><li class="logo" style="--brand:#F7DF1E"><svg class="ico " width="22" height="22" style="color:#F7DF1E" aria-hidden="true"><use href="icons.svg#i-javascript"/></svg><span>JavaScript</span></li><li class="logo" style="--brand:#6CC24A"><svg class="ico " width="22" height="22" style="color:#6CC24A" aria-hidden="true"><use href="icons.svg#i-nodedotjs"/></svg><span>Node.js</span></li><li class="logo" style="--brand:#8892BF"><svg class="ico " width="22" height="22" style="color:#8892BF" aria-hidden="true"><use href="icons.svg#i-php"/></svg><span>PHP</span></li><li class="logo" style="--brand:#4FA3E0"><svg class="ico " width="22" height="22" style="color:#4FA3E0" aria-hidden="true"><use href="icons.svg#i-sqlite"/></svg><span>SQL / SQLite</span></li><li class="logo" style="--brand:#05A99A"><svg class="ico " width="22" height="22" style="color:#05A99A" aria-hidden="true"><use href="icons.svg#i-fastapi"/></svg><span>FastAPI</span></li><li class="logo" style="--brand:#0A9EDC"><svg class="ico " width="22" height="22" style="color:#0A9EDC" aria-hidden="true"><use href="icons.svg#i-pytest"/></svg><span>pytest</span></li><li class="logo" style="--brand:#E06A5F"><svg class="ico " width="22" height="22" style="color:#E06A5F" aria-hidden="true"><use href="icons.svg#i-jinja"/></svg><span>Jinja</span></li><li class="logo" style="--brand:#38BDF8"><svg class="ico " width="22" height="22" style="color:#38BDF8" aria-hidden="true"><use href="icons.svg#i-tailwindcss"/></svg><span>Tailwind</span></li><li class="logo" style="--brand:#E34F26"><svg class="ico " width="22" height="22" style="color:#E34F26" aria-hidden="true"><use href="icons.svg#i-html5"/></svg><span>HTML &amp; CSS</span></li><li class="logo" style="--brand:#2088FF"><svg class="ico " width="22" height="22" style="color:#2088FF" aria-hidden="true"><use href="icons.svg#i-githubactions"/></svg><span>GitHub Actions</span></li><li class="logo" style="--brand:#F05032"><svg class="ico " width="22" height="22" style="color:#F05032" aria-hidden="true"><use href="icons.svg#i-git"/></svg><span>Git</span></li><li class="logo" style="--brand:#FCC624"><svg class="ico " width="22" height="22" style="color:#FCC624" aria-hidden="true"><use href="icons.svg#i-linux"/></svg><span>Linux</span></li><li class="logo" style="--brand:#3F9BD6"><svg class="ico " width="22" height="22" style="color:#3F9BD6" aria-hidden="true"><use href="icons.svg#i-wordpress"/></svg><span>WordPress</span></li></ul>
       </div>
-
-      <div class="exp-card">
-        <div class="exp-head">
-          <div class="exp-title">Digital Marketing Consultant<br/><span class="company">Upwork · Freelance</span></div>
-          <div class="exp-dates">Jan 2026 – Jun 2026</div>
-        </div>
-        <div class="exp-location">Edmonton, AB, Canada · Remote</div>
-        <div class="exp-desc">Consulting and execution for SMBs during the transition to the Canadian market — SEO audits, on-page and technical improvements, Meta and Google Ads campaigns, WordPress builds, content strategy, and monthly performance reports with actionable recommendations.</div>
-      </div>
-
-      <div class="exp-card">
-        <div class="exp-head">
-          <div class="exp-title">Web &amp; Digital Marketing Manager<br/><span class="company">Fanavari Rayan Mehr Rahjoo LLC</span></div>
-          <div class="exp-dates">Oct 2018 – Dec 2025 · 7 yrs</div>
-        </div>
-        <div class="exp-location">Tehran Province, Iran · On-site · Full-time</div>
-        <div class="exp-desc">Managed digital marketing strategy, brand development, and web operations for <strong>10+ clients simultaneously</strong>. Led a cross-functional team of 10 (design, SEO, content, ad managers). Ran Google Ads campaigns with monthly budgets from $900–$5,000/client, achieved <strong>ROAS of 5.0x</strong>, reduced cost per lead by up to <strong>54%</strong>, and drove Meta Ads campaigns delivering up to <strong>70% customer acquisition growth</strong> in 30 days.</div>
-      </div>
-
-      <div class="exp-card">
-        <div class="exp-head">
-          <div class="exp-title">Senior Web Developer &amp; Digital Marketing Specialist<br/><span class="company">Persia Mehr Co.</span></div>
-          <div class="exp-dates">Oct 2012 – Sep 2018 · 6 yrs</div>
-        </div>
-        <div class="exp-location">Tehran Province, Iran · On-site · Full-time</div>
-        <div class="exp-desc">Designed, developed, and marketed custom WordPress websites for local businesses and professional-services clients. Performed technical SEO audits, on-page SEO, local SEO (Google Business Profile, citations, review generation), and achieved <strong>page 1 Google rankings for 12+ local businesses within 45 days</strong>.</div>
-      </div>
-
-      <div class="exp-card">
-        <div class="exp-head">
-          <div class="exp-title">Web Developer<br/><span class="company">Iricom IT Center</span></div>
-          <div class="exp-dates">Oct 2011 – Oct 2012 · 1 yr</div>
-        </div>
-        <div class="exp-location">Isfahan Province, Iran · On-site · Internship</div>
-        <div class="exp-desc">Entry-level web development and IT support — built and maintained web interfaces for internal and client-facing systems, configured networks and VoIP platforms, and supported infrastructure. The technical foundation for a decade of marketing-engineering work.</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Education -->
-  <section>
-    <h2>Education</h2>
-    <div class="edu-grid">
-      <div class="edu-card">
-        <div class="edu-degree">Master's Degree, Industrial Engineering</div>
-        <div class="edu-school">Islamic Azad University, Science and Research Branch, Tehran</div>
-        <div class="edu-dates">2012 – 2015</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-degree">Bachelor of Science, Computer Hardware Engineering</div>
-        <div class="edu-school">University of Isfahan</div>
-        <div class="edu-dates">2007 – 2012</div>
+      <div class="half mk reveal">
+        <span class="kicker">Marketing and brand leadership</span>
+        <h3>Brand and growth</h3>
+        <p>Brand strategy and positioning, campaign planning across search and social, technical and local SEO, Google and Meta Ads, reputation, and the monthly reporting that holds it all accountable.</p>
+        <ul class="logos"><li class="logo" style="--brand:#4285F4"><svg class="ico " width="22" height="22" style="color:#4285F4" aria-hidden="true"><use href="icons.svg#i-googleads"/></svg><span>Google Ads</span></li><li class="logo" style="--brand:#1877F2"><svg class="ico " width="22" height="22" style="color:#1877F2" aria-hidden="true"><use href="icons.svg#i-meta"/></svg><span>Meta Ads</span></li><li class="logo" style="--brand:#F9AB00"><svg class="ico " width="22" height="22" style="color:#F9AB00" aria-hidden="true"><use href="icons.svg#i-googleanalytics"/></svg><span>GA4</span></li><li class="logo" style="--brand:#4E8EF7"><svg class="ico " width="22" height="22" style="color:#4E8EF7" aria-hidden="true"><use href="icons.svg#i-googletagmanager"/></svg><span>Tag Manager</span></li><li class="logo" style="--brand:#458CF5"><svg class="ico " width="22" height="22" style="color:#458CF5" aria-hidden="true"><use href="icons.svg#i-googlesearchconsole"/></svg><span>Search Console</span></li><li class="logo" style="--brand:#669DF6"><svg class="ico " width="22" height="22" style="color:#669DF6" aria-hidden="true"><use href="icons.svg#i-googlebigquery"/></svg><span>BigQuery</span></li><li class="logo" style="--brand:#8AB4F8"><svg class="ico " width="22" height="22" style="color:#8AB4F8" aria-hidden="true"><use href="icons.svg#i-looker"/></svg><span>Looker Studio</span></li><li class="logo" style="--brand:#FF7A59"><svg class="ico " width="22" height="22" style="color:#FF7A59" aria-hidden="true"><use href="icons.svg#i-hubspot"/></svg><span>HubSpot</span></li><li class="logo" style="--brand:#FFE01B"><svg class="ico " width="22" height="22" style="color:#FFE01B" aria-hidden="true"><use href="icons.svg#i-mailchimp"/></svg><span>Mailchimp</span></li><li class="logo" style="--brand:#10A37F"><svg class="ico " width="22" height="22" style="color:#10A37F" aria-hidden="true"><use href="icons.svg#i-openai"/></svg><span>OpenAI API</span></li></ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Skills -->
-  <section>
-    <h2>Technical &amp; Marketing Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>Brand &amp; Digital Marketing</h3>
-        <ul>
-          <li>Brand strategy &amp; identity</li>
-          <li>Multi-channel campaigns</li>
-          <li>Editorial calendars</li>
-          <li>Online reputation management</li>
-          <li>PR &amp; media relations</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>SEO</h3>
-        <ul>
-          <li>Technical SEO audits</li>
-          <li>On-page optimization</li>
-          <li>Local SEO (GBP + citations)</li>
-          <li>Schema markup (JSON-LD)</li>
-          <li>Core Web Vitals</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>Paid Advertising</h3>
-        <ul>
-          <li>Google Ads (Search / PMax)</li>
-          <li>Meta Ads (Facebook / Instagram)</li>
-          <li>ROAS optimization</li>
-          <li>Remarketing / RLSA</li>
-          <li>Conversion tracking</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>Social Media</h3>
-        <ul>
-          <li>Facebook &amp; Instagram</li>
-          <li>LinkedIn &amp; TikTok</li>
-          <li>YouTube &amp; short-form video</li>
-          <li>Content strategy</li>
-          <li>Engagement growth</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>WordPress</h3>
-        <ul>
-          <li>Custom theme development</li>
-          <li>Plugin configuration</li>
-          <li>Performance optimization</li>
-          <li>WooCommerce</li>
-          <li>ACF &amp; page builders</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>Development</h3>
-        <ul>
-          <li>PHP</li>
-          <li>Python (marketing scripts, CLIs)</li>
-          <li>JavaScript / Node.js</li>
-          <li>HTML / CSS / Tailwind</li>
-          <li>MySQL / WP Database</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>Analytics &amp; Tracking</h3>
-        <ul>
-          <li>Google Analytics 4</li>
-          <li>Google Tag Manager</li>
-          <li>Google Search Console</li>
-          <li>Looker Studio</li>
-          <li>GA4 Data API</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>Tools</h3>
-        <ul>
-          <li>Google Ads Manager</li>
-          <li>Meta Business Suite</li>
-          <li>HubSpot</li>
-          <li>Screaming Frog</li>
-          <li>Mailchimp / CRM</li>
-        </ul>
+<section class="sec" id="work">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="t"><span class="num-l">02 / Open source</span><h2>Tools I built for real client problems</h2></div>
+      <p class="note">Each runs on files or APIs an agency already has. The CI badges are live, straight from GitHub Actions.</p>
+    </div>
+    <div class="filters reveal" role="group" aria-label="Filter projects by area"><button type="button" class="fchip on" data-f="all" aria-pressed="true">All<span>10</span></button><button type="button" class="fchip" data-f="reporting" aria-pressed="false">Reporting<span>2</span></button><button type="button" class="fchip" data-f="analytics" aria-pressed="false">Analytics<span>2</span></button><button type="button" class="fchip" data-f="seo" aria-pressed="false">SEO<span>4</span></button><button type="button" class="fchip" data-f="paid" aria-pressed="false">Paid media<span>1</span></button><button type="button" class="fchip" data-f="ai" aria-pressed="false">AI<span>1</span></button><button type="button" class="fchip" data-f="cro" aria-pressed="false">CRO<span>1</span></button><button type="button" class="fchip" data-f="performance" aria-pressed="false">Performance<span>1</span></button></div>
+    <div class="repos" id="repos">
+      <article class="repo feat" data-cat="reporting">
+        <a class="repo-link" href="https://github.com/mehranmoghadasi/marketing-report-preflight" aria-label="marketing-report-preflight on GitHub"></a>
+        <header>
+          <span class="tile" style="background:#3776AB"><svg width="22" height="22" style="color:#fff" aria-hidden="true"><use href="icons.svg#i-python"/></svg></span>
+          <div class="rh">
+            <span class="cat">Reporting / Data quality</span>
+            <h3>marketing-report-preflight</h3>
+          </div>
+          <span class="stat"><svg width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6.4 4.3 9.6 11 2.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>82 tests</span>
+        </header>
+        <p>Ten data-integrity checks that run before a client report is sent: GA4 sampling and truncation, missing days, metrics that went silent, consent shifts, duplicate conversions and settings drift. Returns a send or do-not-send verdict and writes the client-facing caveat block.</p>
+        <footer>
+          <ul class="chips"><li><svg class="ico " width="13" height="13" style="color:#4F8FD0" aria-hidden="true"><use href="icons.svg#i-python"/></svg>Python</li><li><svg class="ico " width="13" height="13" style="color:#05A99A" aria-hidden="true"><use href="icons.svg#i-fastapi"/></svg>FastAPI</li><li><svg class="ico " width="13" height="13" style="color:#4FA3E0" aria-hidden="true"><use href="icons.svg#i-sqlite"/></svg>SQL / SQLite</li><li><svg class="ico " width="13" height="13" style="color:#38BDF8" aria-hidden="true"><use href="icons.svg#i-tailwindcss"/></svg>Tailwind</li></ul>
+          <a class="ci" href="https://github.com/mehranmoghadasi/marketing-report-preflight/actions"><img src="https://github.com/mehranmoghadasi/marketing-report-preflight/actions/workflows/python-app.yml/badge.svg" alt="CI status for marketing-report-preflight" height="20" loading="lazy"></a>
+        </footer>
+      </article>
+      <article class="repo feat" data-cat="reporting">
+        <a class="repo-link" href="https://github.com/mehranmoghadasi/agency-report-builder" aria-label="agency-report-builder on GitHub"></a>
+        <header>
+          <span class="tile" style="background:#3776AB"><svg width="22" height="22" style="color:#fff" aria-hidden="true"><use href="icons.svg#i-python"/></svg></span>
+          <div class="rh">
+            <span class="cat">Reporting / Automation</span>
+            <h3>agency-report-builder</h3>
+          </div>
+          <span class="stat"><svg width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6.4 4.3 9.6 11 2.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>23 tests</span>
+        </header>
+        <p>Pulls GA4 and Search Console for a reporting period, renders a branded HTML report with period-over-period comparison, and exports it to PDF in one command.</p>
+        <footer>
+          <ul class="chips"><li><svg class="ico " width="13" height="13" style="color:#4F8FD0" aria-hidden="true"><use href="icons.svg#i-python"/></svg>Python</li><li><svg class="ico " width="13" height="13" style="color:#F9AB00" aria-hidden="true"><use href="icons.svg#i-googleanalytics"/></svg>GA4</li><li><svg class="ico " width="13" height="13" style="color:#458CF5" aria-hidden="true"><use href="icons.svg#i-googlesearchconsole"/></svg>Search Console</li><li><svg class="ico " width="13" height="13" style="color:#E06A5F" aria-hidden="true"><use href="icons.svg#i-jinja"/></svg>Jinja</li></ul>
+          <a class="ci" href="https://github.com/mehranmoghadasi/agency-report-builder/actions"><img src="https://github.com/mehranmoghadasi/agency-report-builder/actions/workflows/python-app.yml/badge.svg" alt="CI status for agency-report-builder" height="20" loading="lazy"></a>
+        </footer>
+      </article>
+      <article class="repo feat" data-cat="analytics">
+        <a class="repo-link" href="https://github.com/mehranmoghadasi/ga4-event-auditor" aria-label="ga4-event-auditor on GitHub"></a>
+        <header>
+          <span class="tile" style="background:#3776AB"><svg width="22" height="22" style="color:#fff" aria-hidden="true"><use href="icons.svg#i-python"/></svg></span>
+          <div class="rh">
+            <span class="cat">Analytics / Tracking QA</span>
+            <h3>ga4-event-auditor</h3>
+          </div>
+          <span class="stat"><svg width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6.4 4.3 9.6 11 2.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>10 tests</span>
+        </header>
+        <p>Compares what GA4 actually collects against the tracking plan agreed with the client. Reports parameter coverage as a percentage, catches naming drift and ghost events, and returns a health score you can gate a release on.</p>
+        <footer>
+          <ul class="chips"><li><svg class="ico " width="13" height="13" style="color:#4F8FD0" aria-hidden="true"><use href="icons.svg#i-python"/></svg>Python</li><li><svg class="ico " width="13" height="13" style="color:#F9AB00" aria-hidden="true"><use href="icons.svg#i-googleanalytics"/></svg>GA4</li><li><svg class="ico " width="13" height="13" style="color:#669DF6" aria-hidden="true"><use href="icons.svg#i-googlebigquery"/></svg>BigQuery</li><li><svg class="ico " width="13" height="13" style="color:#4E8EF7" aria-hidden="true"><use href="icons.svg#i-googletagmanager"/></svg>Tag Manager</li></ul>
+          <a class="ci" href="https://github.com/mehranmoghadasi/ga4-event-auditor/actions"><img src="https://github.com/mehranmoghadasi/ga4-event-auditor/actions/workflows/python-app.yml/badge.svg" alt="CI status for ga4-event-auditor" height="20" loading="lazy"></a>
+        </footer>
+      </article>
+      <article class="repo feat" data-cat="seo">
+        <a class="repo-link" href="https://github.com/mehranmoghadasi/gsc-coverage-monitor" aria-label="gsc-coverage-monitor on GitHub"></a>
+        <header>
+          <span class="tile" style="background:#3F7D3A"><svg width="22" height="22" style="color:#fff" aria-hidden="true"><use href="icons.svg#i-nodedotjs"/></svg></span>
+          <div class="rh">
+            <span class="cat">SEO / Monitoring</span>
+            <h3>gsc-coverage-monitor</h3>
+          </div>
+          <span class="stat"><svg width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6.4 4.3 9.6 11 2.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>19 tests</span>
+        </header>
+        <p>Polls every Search Console property you manage, flags pages that quietly dropped out of search, confirms why with the URL Inspection API, and posts one digest instead of thirty dashboards.</p>
+        <footer>
+          <ul class="chips"><li><svg class="ico " width="13" height="13" style="color:#6CC24A" aria-hidden="true"><use href="icons.svg#i-nodedotjs"/></svg>Node.js</li><li><svg class="ico " width="13" height="13" style="color:#458CF5" aria-hidden="true"><use href="icons.svg#i-googlesearchconsole"/></svg>Search Console</li><li><svg class="ico " width="13" height="13" style="color:#4FA3E0" aria-hidden="true"><use href="icons.svg#i-sqlite"/></svg>SQL / SQLite</li></ul>
+          <a class="ci" href="https://github.com/mehranmoghadasi/gsc-coverage-monitor/actions"><img src="https://github.com/mehranmoghadasi/gsc-coverage-monitor/actions/workflows/node.js.yml/badge.svg" alt="CI status for gsc-coverage-monitor" height="20" loading="lazy"></a>
+        </footer>
+      </article>
+      <article class="repo feat" data-cat="paid">
+        <a class="repo-link" href="https://github.com/mehranmoghadasi/google-ads-negative-keyword-manager" aria-label="google-ads-negative-keyword-manager on GitHub"></a>
+        <header>
+          <span class="tile" style="background:#3776AB"><svg width="22" height="22" style="color:#fff" aria-hidden="true"><use href="icons.svg#i-python"/></svg></span>
+          <div class="rh">
+            <span class="cat">Paid media / Automation</span>
+            <h3>google-ads-negative-keyword-manager</h3>
+          </div>
+          <span class="stat"><svg width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6.4 4.3 9.6 11 2.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>15 tests</span>
+        </header>
+        <p>Mines search-term reports for wasted spend, then audits a proposed negative list for conflicts that would block your own converting keywords before anything is uploaded.</p>
+        <footer>
+          <ul class="chips"><li><svg class="ico " width="13" height="13" style="color:#4F8FD0" aria-hidden="true"><use href="icons.svg#i-python"/></svg>Python</li><li><svg class="ico " width="13" height="13" style="color:#4285F4" aria-hidden="true"><use href="icons.svg#i-googleads"/></svg>Google Ads</li><li><svg class="ico " width="13" height="13" style="color:#0A9EDC" aria-hidden="true"><use href="icons.svg#i-pytest"/></svg>pytest</li></ul>
+          <a class="ci" href="https://github.com/mehranmoghadasi/google-ads-negative-keyword-manager/actions"><img src="https://github.com/mehranmoghadasi/google-ads-negative-keyword-manager/actions/workflows/python-app.yml/badge.svg" alt="CI status for google-ads-negative-keyword-manager" height="20" loading="lazy"></a>
+        </footer>
+      </article>
+      <article class="repo feat" data-cat="ai seo">
+        <a class="repo-link" href="https://github.com/mehranmoghadasi/llm-content-brief-engine" aria-label="llm-content-brief-engine on GitHub"></a>
+        <header>
+          <span class="tile" style="background:#3776AB"><svg width="22" height="22" style="color:#fff" aria-hidden="true"><use href="icons.svg#i-python"/></svg></span>
+          <div class="rh">
+            <span class="cat">AI / Content</span>
+            <h3>llm-content-brief-engine</h3>
+          </div>
+          <span class="stat"><svg width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6.4 4.3 9.6 11 2.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>22 tests</span>
+        </header>
+        <p>Turns a keyword into a structured content brief from the live SERP: headings, entities, questions and measured competitor gaps rather than a model&#x27;s guess at them.</p>
+        <footer>
+          <ul class="chips"><li><svg class="ico " width="13" height="13" style="color:#4F8FD0" aria-hidden="true"><use href="icons.svg#i-python"/></svg>Python</li><li><svg class="ico " width="13" height="13" style="color:#10A37F" aria-hidden="true"><use href="icons.svg#i-openai"/></svg>OpenAI API</li><li><svg class="ico " width="13" height="13" style="color:#E06A5F" aria-hidden="true"><use href="icons.svg#i-jinja"/></svg>Jinja</li></ul>
+          <a class="ci" href="https://github.com/mehranmoghadasi/llm-content-brief-engine/actions"><img src="https://github.com/mehranmoghadasi/llm-content-brief-engine/actions/workflows/python-app.yml/badge.svg" alt="CI status for llm-content-brief-engine" height="20" loading="lazy"></a>
+        </footer>
+      </article>
+      <article class="repo" data-cat="cro analytics">
+        <a class="repo-link" href="https://github.com/mehranmoghadasi/ab-test-significance-toolkit" aria-label="ab-test-significance-toolkit on GitHub"></a>
+        <header>
+          <span class="tile" style="background:#3776AB"><svg width="22" height="22" style="color:#fff" aria-hidden="true"><use href="icons.svg#i-python"/></svg></span>
+          <div class="rh">
+            <span class="cat">CRO / Statistics</span>
+            <h3>ab-test-significance-toolkit</h3>
+          </div>
+          <span class="stat"><svg width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6.4 4.3 9.6 11 2.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>20 tests</span>
+        </header>
+        <p>Frequentist, Bayesian and always-valid sequential analysis of an A/B test in one pass, with revenue impact and a client-ready HTML report.</p>
+        <footer>
+          <ul class="chips"><li><svg class="ico " width="13" height="13" style="color:#4F8FD0" aria-hidden="true"><use href="icons.svg#i-python"/></svg>Python</li><li><svg class="ico " width="13" height="13" style="color:#0A9EDC" aria-hidden="true"><use href="icons.svg#i-pytest"/></svg>pytest</li></ul>
+          <a class="ci" href="https://github.com/mehranmoghadasi/ab-test-significance-toolkit/actions"><img src="https://github.com/mehranmoghadasi/ab-test-significance-toolkit/actions/workflows/python-app.yml/badge.svg" alt="CI status for ab-test-significance-toolkit" height="20" loading="lazy"></a>
+        </footer>
+      </article>
+      <article class="repo" data-cat="seo">
+        <a class="repo-link" href="https://github.com/mehranmoghadasi/seo-content-gap-analyzer" aria-label="seo-content-gap-analyzer on GitHub"></a>
+        <header>
+          <span class="tile" style="background:#3776AB"><svg width="22" height="22" style="color:#fff" aria-hidden="true"><use href="icons.svg#i-python"/></svg></span>
+          <div class="rh">
+            <span class="cat">SEO / Content</span>
+            <h3>seo-content-gap-analyzer</h3>
+          </div>
+          <span class="stat"><svg width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6.4 4.3 9.6 11 2.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>12 tests</span>
+        </header>
+        <p>Compares a page against the pages outranking it and reports the topics and terms it never covers, with keyword clustering built in.</p>
+        <footer>
+          <ul class="chips"><li><svg class="ico " width="13" height="13" style="color:#4F8FD0" aria-hidden="true"><use href="icons.svg#i-python"/></svg>Python</li><li><svg class="ico " width="13" height="13" style="color:#0A9EDC" aria-hidden="true"><use href="icons.svg#i-pytest"/></svg>pytest</li></ul>
+          <a class="ci" href="https://github.com/mehranmoghadasi/seo-content-gap-analyzer/actions"><img src="https://github.com/mehranmoghadasi/seo-content-gap-analyzer/actions/workflows/python-app.yml/badge.svg" alt="CI status for seo-content-gap-analyzer" height="20" loading="lazy"></a>
+        </footer>
+      </article>
+      <article class="repo" data-cat="seo">
+        <a class="repo-link" href="https://github.com/mehranmoghadasi/seo-internal-link-analyzer" aria-label="seo-internal-link-analyzer on GitHub"></a>
+        <header>
+          <span class="tile" style="background:#3776AB"><svg width="22" height="22" style="color:#fff" aria-hidden="true"><use href="icons.svg#i-python"/></svg></span>
+          <div class="rh">
+            <span class="cat">SEO / Technical</span>
+            <h3>seo-internal-link-analyzer</h3>
+          </div>
+          <span class="stat"><svg width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6.4 4.3 9.6 11 2.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>13 tests</span>
+        </header>
+        <p>Crawls a sitemap to surface orphan pages, thin internal linking and the link opportunities a site is leaving unused.</p>
+        <footer>
+          <ul class="chips"><li><svg class="ico " width="13" height="13" style="color:#4F8FD0" aria-hidden="true"><use href="icons.svg#i-python"/></svg>Python</li><li><svg class="ico " width="13" height="13" style="color:#0A9EDC" aria-hidden="true"><use href="icons.svg#i-pytest"/></svg>pytest</li></ul>
+          <a class="ci" href="https://github.com/mehranmoghadasi/seo-internal-link-analyzer/actions"><img src="https://github.com/mehranmoghadasi/seo-internal-link-analyzer/actions/workflows/python-app.yml/badge.svg" alt="CI status for seo-internal-link-analyzer" height="20" loading="lazy"></a>
+        </footer>
+      </article>
+      <article class="repo" data-cat="performance">
+        <a class="repo-link" href="https://github.com/mehranmoghadasi/wordpress-performance-optimization" aria-label="wordpress-performance-optimization on GitHub"></a>
+        <header>
+          <span class="tile" style="background:#5B5F9E"><svg width="22" height="22" style="color:#fff" aria-hidden="true"><use href="icons.svg#i-php"/></svg></span>
+          <div class="rh">
+            <span class="cat">Performance / WordPress</span>
+            <h3>wordpress-performance-optimization</h3>
+          </div>
+          <span class="stat"><svg width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6.4 4.3 9.6 11 2.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>15 checks</span>
+        </header>
+        <p>PHP checks and server rules for getting a real WordPress install into the green on Core Web Vitals.</p>
+        <footer>
+          <ul class="chips"><li><svg class="ico " width="13" height="13" style="color:#8892BF" aria-hidden="true"><use href="icons.svg#i-php"/></svg>PHP</li><li><svg class="ico " width="13" height="13" style="color:#3F9BD6" aria-hidden="true"><use href="icons.svg#i-wordpress"/></svg>WordPress</li></ul>
+          <a class="ci" href="https://github.com/mehranmoghadasi/wordpress-performance-optimization/actions"><img src="https://github.com/mehranmoghadasi/wordpress-performance-optimization/actions/workflows/php.yml/badge.svg" alt="CI status for wordpress-performance-optimization" height="20" loading="lazy"></a>
+        </footer>
+      </article>
+    </div>
+    <p class="more-link">Plus two writing repositories: <a href="https://github.com/mehranmoghadasi/digital-marketing-case-studies">campaign case studies</a> and a <a href="https://github.com/mehranmoghadasi/social-media-marketing-playbook">social media playbook</a>.</p>
+
+    <div class="pipe reveal">
+      <h3>How they fit together</h3>
+      <p>One chain rather than ten unrelated scripts. Each tool writes JSON the next one reads.</p>
+      <div class="flow">
+        <div class="inputs">
+          <div class="node"><span class="dot" style="background:#F9AB00"></span><div>ga4-event-auditor<small>tracking QA</small></div></div>
+          <div class="node"><span class="dot" style="background:#458CF5"></span><div>gsc-coverage-monitor<small>index coverage</small></div></div>
+          <div class="node"><span class="dot" style="background:var(--faint)"></span><div>metrics, consent, conversions<small>platform exports</small></div></div>
+        </div>
+        <div class="arrow" aria-hidden="true"><svg width="34" height="14" viewBox="0 0 34 14"><path d="M0 7h31M25 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
+        <div class="node gate"><span class="dot" style="background:var(--accent)"></span><div><b>marketing-report-preflight</b><small>10 checks, one verdict</small></div></div>
+        <div class="arrow" aria-hidden="true"><svg width="34" height="14" viewBox="0 0 34 14"><path d="M0 7h31M25 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
+        <div class="outs">
+          <div class="node out-ok"><span class="dot" style="background:var(--ok)"></span><div>agency-report-builder<small>send: branded client report</small></div></div>
+          <div class="node out-no"><span class="dot" style="background:var(--fail)"></span><div>fix the data first<small>do not send, with reasons</small></div></div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Portfolio -->
-  <section>
-    <h2>Featured Open-Source Projects</h2>
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <div class="project-icon">🧠</div>
-        <h3>LLM Content Brief Engine</h3>
-        <p>Python CLI that turns any keyword into a structured SEO content brief — crawls top SERP results, extracts headings / entities / PAA via BeautifulSoup, synthesizes recommendations with OpenAI.</p>
-        <div>
-          <span class="project-tag">Python</span>
-          <span class="project-tag">SEO</span>
-          <span class="project-tag">OpenAI</span>
-        </div>
-        <a class="project-link" href="https://github.com/mehranmoghadasi/llm-content-brief-engine" target="_blank" rel="noopener">View on GitHub →</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">📊</div>
-        <h3>Agency Report Builder</h3>
-        <p>Python CLI that pulls GA4 + Google Search Console data, renders a branded HTML report with period-over-period comparisons, and exports to PDF in one command — built for digital marketing agencies.</p>
-        <div>
-          <span class="project-tag">Python</span>
-          <span class="project-tag">GA4</span>
-          <span class="project-tag">Reporting</span>
-        </div>
-        <a class="project-link" href="https://github.com/mehranmoghadasi/agency-report-builder" target="_blank" rel="noopener">View on GitHub →</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">🧪</div>
-        <h3>GA4 Event Auditor</h3>
-        <p>Python CLI that audits GA4 event implementations by comparing live event data against a measurement plan — flags missing events, parameter mismatches, and naming inconsistencies before they corrupt reports.</p>
-        <div>
-          <span class="project-tag">Python</span>
-          <span class="project-tag">GA4</span>
-          <span class="project-tag">Analytics</span>
-        </div>
-        <a class="project-link" href="https://github.com/mehranmoghadasi/ga4-event-auditor" target="_blank" rel="noopener">View on GitHub →</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">🎯</div>
-        <h3>Google Ads Negative Keyword Manager</h3>
-        <p>Python CLI that analyzes Google Ads search-term reports to suggest, deduplicate, and export campaign-level negative keywords — saving hours of manual account hygiene every week.</p>
-        <div>
-          <span class="project-tag">Python</span>
-          <span class="project-tag">Google Ads</span>
-          <span class="project-tag">PPC</span>
-        </div>
-        <a class="project-link" href="https://github.com/mehranmoghadasi/google-ads-negative-keyword-manager" target="_blank" rel="noopener">View on GitHub →</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">🔍</div>
-        <h3>Technical SEO Audit Framework</h3>
-        <p>Crawl-aware audit framework with a Python URL checker, redirect detection, JSON-LD schema templates for 6 business types, and SEO severity scoring — built for site-wide audits across 100+ pages.</p>
-        <div>
-          <span class="project-tag">Python</span>
-          <span class="project-tag">SEO</span>
-          <span class="project-tag">JSON-LD</span>
-        </div>
-        <a class="project-link" href="https://github.com/mehranmoghadasi/technical-seo-audit-framework" target="_blank" rel="noopener">View on GitHub →</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">⚡</div>
-        <h3>WordPress Performance Optimization</h3>
-        <p>PHP optimization toolkit, Apache/.htaccess config, and 50-point checklist for getting Core Web Vitals into the green. Reduced load times from 7.2s to 2.9s on real client sites.</p>
-        <div>
-          <span class="project-tag">PHP</span>
-          <span class="project-tag">WordPress</span>
-          <span class="project-tag">Web Vitals</span>
-        </div>
-        <a class="project-link" href="https://github.com/mehranmoghadasi/wordpress-performance-optimization" target="_blank" rel="noopener">View on GitHub →</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">🏠</div>
-        <h3>WordPress Lead Generation Starter</h3>
-        <p>Conversion-optimized WordPress starter theme for service businesses — AJAX contact form, schema markup, GA4 tracking, click-to-call, and lead-capture patterns built for speed and trust signals.</p>
-        <div>
-          <span class="project-tag">PHP</span>
-          <span class="project-tag">WordPress</span>
-          <span class="project-tag">CRO</span>
-        </div>
-        <a class="project-link" href="https://github.com/mehranmoghadasi/wordpress-lead-generation-starter" target="_blank" rel="noopener">View on GitHub →</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">📈</div>
-        <h3>Google Ads Campaign Playbook</h3>
-        <p>4-phase Google Ads strategy framework paired with a Python ROAS / budget calculator covering 8 industries and multi-scenario comparisons — decision framework and executable math in one repo.</p>
-        <div>
-          <span class="project-tag">Google Ads</span>
-          <span class="project-tag">Python</span>
-          <span class="project-tag">ROAS</span>
-        </div>
-        <a class="project-link" href="https://github.com/mehranmoghadasi/google-ads-campaign-playbook" target="_blank" rel="noopener">View on GitHub →</a>
-      </div>
-
+<section class="sec" id="next">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="t"><span class="num-l">03 / Roadmap</span><h2>Building next</h2></div>
+      <p class="note">Planned rather than shipped, and marked that way on purpose. Revised whenever client work says something else matters more.</p>
     </div>
-    <p style="margin-top:22px; font-size:0.9rem; color:var(--muted); text-align:center;">
-      → <a href="https://github.com/mehranmoghadasi?tab=repositories&type=source&sort=updated"><strong>Browse all 20+ public repositories on GitHub</strong></a>
-    </p>
-  </section>
-
-  <!-- Results -->
-  <section>
-    <h2>Career Highlights</h2>
-    <div class="results-grid">
-      <div class="result-card">
-        <div class="result-num">70%</div>
-        <div class="result-label">Max customer acquisition growth in 30 days (Meta Ads)</div>
+    <div class="next reveal">
+      <div class="plan">
+        <div class="top"><span class="pic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6v3a2 2 0 1 0 4 0V3h2v18H3V3h2v3a2 2 0 1 0 4 0z"/></svg></span><span class="badge">Planned</span></div>
+        <h3>On-page inspection extension</h3>
+        <p>Checking tracking, structured data and consent state on a live page still means opening four tools. It should be one panel in the browser.</p>
       </div>
-      <div class="result-card">
-        <div class="result-num">5.0x</div>
-        <div class="result-label">ROAS achieved on e-commerce Google Ads campaign</div>
+      <div class="plan">
+        <div class="top"><span class="pic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span class="badge">Planned</span></div>
+        <h3>Local SEO toolkit</h3>
+        <p>Google Business Profile audits, citation consistency and review velocity, treated as a first-class workflow rather than an afterthought in an SEO suite.</p>
       </div>
-      <div class="result-card">
-        <div class="result-num">54%</div>
-        <div class="result-label">Cost-per-lead reduction via segmentation &amp; RLSA</div>
-      </div>
-      <div class="result-card">
-        <div class="result-num">30+</div>
-        <div class="result-label">WordPress websites built &amp; optimized</div>
-      </div>
-      <div class="result-card">
-        <div class="result-num">&lt;3s</div>
-        <div class="result-label">Average load time (from 6–7s) via caching + CDN + PHP tuning</div>
-      </div>
-      <div class="result-card">
-        <div class="result-num">12+</div>
-        <div class="result-label">Local businesses ranked on page 1 within 45 days</div>
-      </div>
-      <div class="result-card">
-        <div class="result-num">10+</div>
-        <div class="result-label">Clients managed simultaneously over a 7-year period</div>
-      </div>
-      <div class="result-card">
-        <div class="result-num">10</div>
-        <div class="result-label">Person cross-functional team led (design, SEO, content, ads)</div>
+      <div class="plan">
+        <div class="top"><span class="pic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><span class="badge">Planned</span></div>
+        <h3>Agency client portal</h3>
+        <p>One dashboard over the JSON the tools above already produce, so an account has a single current view instead of a folder of reports.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <section>
-    <h2>Get in Touch</h2>
-    <p style="margin-bottom:20px; color:var(--muted);">Currently serving as <strong>Digital Marketing &amp; Brand Manager at AM PM Properties Inc</strong> in Calgary. Open to industry connections, collaboration on open-source marketing tooling, and speaking or consulting inquiries.</p>
-    <ul class="contact-list">
-      <li><a href="mailto:mehran.moghadasi@gmail.com">✉️ mehran.moghadasi@gmail.com</a></li>
-      <li><a href="https://www.linkedin.com/in/mehranmoghadasi" target="_blank" rel="noopener">💼 LinkedIn</a></li>
-      <li><a href="https://github.com/mehranmoghadasi" target="_blank" rel="noopener">🐙 GitHub</a></li>
-    </ul>
-  </section>
-</div>
+<section class="sec" id="experience">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="t"><span class="num-l">04 / Experience</span><h2>Fifteen years, both sides</h2></div>
+      <p class="note">Tags show which half of the job each role leaned on: <span class="tag e">engineering</span> <span class="tag m">marketing and brand</span></p>
+    </div>
+    <div class="tl">
+      <div class="job now reveal">
+        <span class="when">Jul 2026 to present</span>
+        <h3>Digital Marketing &amp; Brand Manager</h3>
+        <div class="org">AM PM Properties Inc <span>&middot; Calgary, AB</span></div>
+        <p>All brand, digital and online growth work for a boutique property management company with a portfolio of 600+ residential properties: brand strategy, website, SEO, paid campaigns, social and content, reputation, and monthly performance reporting to ownership.</p>
+        <div class="tags"><span class="tag m">Brand</span><span class="tag m">Marketing</span><span class="tag e">Reporting systems</span></div>
+      </div>
+      <div class="job reveal">
+        <span class="when">Jan 2026 to Jun 2026</span>
+        <h3>Digital Marketing Consultant</h3>
+        <div class="org">Upwork <span>&middot; Edmonton, AB, remote</span></div>
+        <p>Consulting and hands-on execution for small and medium businesses while establishing myself in the Canadian market: SEO audits, Google and Meta campaigns, WordPress builds and monthly reporting.</p>
+        <div class="tags"><span class="tag m">Marketing</span><span class="tag e">WordPress builds</span></div>
+      </div>
+      <div class="job reveal">
+        <span class="when">Oct 2018 to Dec 2025</span>
+        <h3>Web &amp; Digital Marketing Manager</h3>
+        <div class="org">Fanavari Rayan Mehr Rahjoo <span>&middot; Tehran, Iran</span></div>
+        <p>Marketing strategy, brand development and web operations for 10+ client accounts at a time across service, e-commerce and professional services. Led a cross-functional team of ten and ran paid budgets from $900 to $5,000 per client per month. Most of the tooling on this page began as internal scripts here.</p>
+        <div class="tags"><span class="tag m">Team leadership</span><span class="tag m">Marketing</span><span class="tag e">Web operations</span><span class="tag e">Automation</span></div>
+      </div>
+      <div class="job reveal">
+        <span class="when">Oct 2012 to Sep 2018</span>
+        <h3>Senior Web Developer &amp; Digital Marketing Specialist</h3>
+        <div class="org">Persia Mehr Co. <span>&middot; Tehran, Iran</span></div>
+        <p>Designed, built and marketed 30+ WordPress sites for local businesses and professional services clients, owning both the technical build and the campaigns that followed it.</p>
+        <div class="tags"><span class="tag e">Web development</span><span class="tag e">WordPress / PHP</span><span class="tag m">SEO</span></div>
+      </div>
+      <div class="job reveal">
+        <span class="when">Oct 2011 to Oct 2012</span>
+        <h3>Web Developer, internship</h3>
+        <div class="org">Iricom IT Center <span>&middot; Isfahan, Iran</span></div>
+        <p>Web interfaces, network and VoIP configuration, and infrastructure support. The engineering grounding the rest of this timeline is built on.</p>
+        <div class="tags"><span class="tag e">Web development</span><span class="tag e">Networking</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<footer>
-  <p>Mehran Moghadasi &nbsp;|&nbsp; Calgary, Alberta, Canada &nbsp;|&nbsp;
-    <a href="https://github.com/mehranmoghadasi">github.com/mehranmoghadasi</a>
-    &nbsp;|&nbsp;
-    <a href="https://www.linkedin.com/in/mehranmoghadasi">linkedin.com/in/mehranmoghadasi</a>
-  </a>
+<section class="sec" id="education">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="t"><span class="num-l">05 / Education</span><h2>Education</h2></div>
+    </div>
+    <div class="edu reveal">
+      <div class="deg cs">
+        <span class="pic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span>
+        <div><span class="when">2008 to 2012</span><h3>Bachelor's degree, Computer Engineering</h3><p>University of Isfahan</p></div>
+      </div>
+      <div class="deg">
+        <span class="pic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></span>
+        <div><span class="when">2013 to 2015</span><h3>Master's degree, Socio-Economic Systems Engineering</h3><p>Islamic Azad University, Science and Research Branch</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site" id="contact">
+  <div class="wrap">
+    <div class="closing reveal">
+      <div>
+        <h2>Engineer the system.<br><span>Lead the brand.</span></h2>
+        <p>Open to brand, growth and marketing-technology roles in Calgary, and to issues or pull requests on anything above.</p>
+      </div>
+      <div class="links">
+        <a class="btn primary" href="https://mehranmoghadasi.com">mehranmoghadasi.com &#8599;</a>
+        <a class="btn" href="https://www.linkedin.com/in/mehranmoghadasi"><svg class="ico " width="15" height="15" style="color:#0A66C2" aria-hidden="true"><use href="icons.svg#i-linkedin"/></svg> LinkedIn</a>
+        <a class="btn" href="https://github.com/mehranmoghadasi"><svg class="ico " width="15" height="15" style="color:#E9ECEF" aria-hidden="true"><use href="icons.svg#i-github"/></svg> GitHub</a>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>Calgary, Alberta</span>
+      <span>Hand-written HTML and CSS, no frameworks, no trackers</span>
+      <span>&copy; 2026 Mehran Moghadasi</span>
+    </div>
+  </div>
 </footer>
 
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var root = document.documentElement;
+
+  // project filter
+  var chips = document.querySelectorAll('.fchip');
+  var repos = document.querySelectorAll('.repo');
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      var f = c.getAttribute('data-f');
+      chips.forEach(function (x) { var on = x === c; x.classList.toggle('on', on); x.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      repos.forEach(function (r) {
+        var cats = r.getAttribute('data-cat').split(' ');
+        r.classList.toggle('hide', !(f === 'all' || cats.indexOf(f) !== -1));
+      });
+    });
+  });
+
+  // active section in the nav
+  var links = {};
+  document.querySelectorAll('.nav a[href^="#"]').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+
+  if (reduce || !('IntersectionObserver' in window)) return;
+  root.classList.add('anim');
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      var bar = e.target.querySelector('.bar'); if (bar) bar.classList.add('play');
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+  var term = document.querySelector('.term');
+  if (term) requestAnimationFrame(function () { setTimeout(function () { term.classList.add('play'); }, 250); });
+
+  var spy = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var a = links[e.target.id]; if (!a) return;
+      if (e.isIntersecting) { Object.keys(links).forEach(function (k) { links[k].classList.remove('active'); }); a.classList.add('active'); }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  Object.keys(links).forEach(function (id) { var s = document.getElementById(id); if (s) spy.observe(s); });
+})();
+</script>
 </body>
 </html>
